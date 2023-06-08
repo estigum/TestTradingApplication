@@ -2,6 +2,7 @@ from Source.Customer import Customer
 from Source.CustomerManager import CustomerManager
 from Source.CustomerDatabase import CustomerDatabase
 from Source.StockMarketManager import StockMarketManager
+from Source.MarketTransaction import MarketTransaction
 
 if __name__ == '__main__':
     print('This is  a test trading application')
@@ -16,11 +17,11 @@ if __name__ == '__main__':
         cust = Customer(custMgr.get_next_customer_id(), "tstigum", "Tove", "Stigum","tstigum@gmail.com");
         dbMgr.save_customer(cust)
     else:
-        cust = Customer(customer_id, "tstigum", "Tove", "Stigum","tstigum@gmail.com");
+        cust = Customer(customer_id, "tstigum", "Tove", "Stigum","tstigum@gmail.com", "631-219-3849");
         dbMgr.update_customer(cust)
     custMgr.add_customer_object(cust)
     dbMgr.close()
-
+    print(cust)
     stock_market = StockMarketManager()
     stock_market.add_ticker('IBM')
     stock_market.add_ticker('GE')
@@ -46,3 +47,5 @@ if __name__ == '__main__':
     print(f"The price of USD/CNY is {val}")
     val = stock_market.get_latest_btc_price("USD")
     print(f"The price of BTC/USD is {val}")
+    tran = MarketTransaction("IBM", 100, 100.00, 11, "BUY", 12)
+    print("Transaction: " + str(tran))

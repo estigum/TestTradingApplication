@@ -1,5 +1,7 @@
+
+
 class MarketTransaction:
-    def __init__(self, ticker, price, quantity, customer_id, transaction_type, transaction_id)
+    def __init__(self, ticker, price, quantity, customer_id, transaction_type, transaction_id):
         self.ticker = ticker
         self.price = price
         self.quantity = quantity
@@ -8,10 +10,12 @@ class MarketTransaction:
         self.transaction_id = transaction_id
 
     def __str__(self):
-        return f"{self.ticker} {self.price} {self.quantity} {self.customer_id} {self.transaction_type} {self.transaction_id}"
+        return f"{self.ticker} {self.price} {self.quantity} {self.customer_id} {self.transaction_type} " \
+               f"{self.transaction_id}"
 
     def __repr__(self):
-        return f"{self.ticker} {self.price} {self.quantity} {self.customer_id} {self.transaction_type} {self.transaction_id}"
+        return f"{self.ticker} {self.price} {self.quantity} {self.customer_id} {self.transaction_type} " \
+               f"{self.transaction_id}"
 
     def get_ticker(self):
         return self.ticker

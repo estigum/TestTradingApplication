@@ -31,6 +31,14 @@ class Customer:
         self.phone_number = phone_number
         self.email = email
 
+    def __str__(self):
+        return f"Customer ID: {self.customer_id}, Username: {self.username}, First Name: {self.first_name}, " \
+               f"Last Name: {self.last_name}, Phone Number: {self.phone_number}, Email: {self.email}"
+
+    def __repr__(self):
+        return f"Customer(customer_id={self.customer_id}, username={self.username}, first_name={self.first_name}, " \
+               f"last_name={self.last_name}, phone_number={self.phone_number}, email={self.email})"
+
     # Getters
     def get_customer_id(self):
         """
